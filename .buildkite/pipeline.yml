@@ -23,7 +23,6 @@ steps:
           env: "buildkite"
 
   - label: ":wrench: Build Labs Image"
-    branches: "main"
     plugins:
       - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
           docker_compose_file: "docker-compose.yml"
