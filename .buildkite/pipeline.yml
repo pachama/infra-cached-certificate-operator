@@ -44,15 +44,6 @@ steps:
 
   - wait
 
-  - label: ":rocket: Deploy to Buildkite"
-    branches: "main"
-    plugins:
-      - ssh://git@github.com/pachama/helm-deploy-buildkite-plugin#v4.0.0:
-          k8s_file: "k8s-files/k8s.buildkite.yaml"
-          env: "buildkite"
-          cluster: "buildkite"
-          wait_for_rollout: true
-
   - label: ":rocket: Deploy to Labs [Cluster=Labs]"
     branches: "main"
     plugins:
